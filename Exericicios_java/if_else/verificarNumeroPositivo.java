@@ -2,7 +2,7 @@ package Exericicios_java.if_else;
 
 import java.util.Scanner;
 
-public class exercicio1 {
+public class verificarNumeroPositivo {
 
     public static void main(String[] args) {
 

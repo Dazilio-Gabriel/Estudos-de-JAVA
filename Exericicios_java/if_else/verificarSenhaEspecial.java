@@ -2,7 +2,7 @@ package Exericicios_java.if_else;
 
 import java.util.Scanner;
 
-public class exercicio4 {
+public class verificarSenhaEspecial {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

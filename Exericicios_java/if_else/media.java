@@ -2,7 +2,7 @@ package Exericicios_java.if_else;
 
 import java.util.Scanner;
 
-public class exercicio3 {
+public class media {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
