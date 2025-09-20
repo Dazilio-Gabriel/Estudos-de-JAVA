@@ -1,4 +1,4 @@
-package Exericicios_java.Loop;
+/*  package Exericicios_java.Loop;
 
 import java.util.Scanner;;
 
@@ -12,4 +12,4 @@ public class triangulo {
         scanner.close();
     }
 
-}
+} */
