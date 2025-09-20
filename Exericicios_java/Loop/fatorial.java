@@ -14,7 +14,6 @@ public class fatorial {
             multiplicacao = multiplicacao * i;
 
         }
-
         System.out.println(multiplicacao);
 
         scanner.close();
