@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ProdutosService {
 
     List<Produtos> listaDosProdutos = new ArrayList<>();
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
 
     Integer contadorId = 0;
 
@@ -34,42 +34,67 @@ public class ProdutosService {
         System.out.println("Digite o ID do produto: ");
         int idProduto = input.nextInt();
 
-        listaDosProdutos.removeIf(p -> p.getIdProduto() == idProduto);
+        listaDosProdutos.removeIf(p -> p
+                .getIdProduto() == idProduto);
 
     }
 
-    public void editarProdutos(Produtos produtos) {
+    public void editarProdutos() {
 
         System.out.println("Editando produto:");
         System.out.println("Digite o ID do produto: ");
         int idProduto = input.nextInt();
 
+        for (Produtos p : listaDosProdutos) {
+            if (p.getIdProduto() == idProduto) {
+
+
+                System.out.println("digite o novo nome ");
+                String nome = input.next();
+                System.out.println("digite o novo descricao ");
+                String descricao = input.next();
+                System.out.println("Digite o novo quantidade ");
+                int quantidade = input.nextInt();
+                System.out.println("Digite o novo preco ");
+                double preco = input.nextDouble();
+
+                p.setNome(nome);
+                p.setDescricao(descricao);
+                p.setQuantidade(quantidade);
+                p.setPreco(preco);
+                
+                return;
+
+            }
+        }
     }
 
-    public List<Produtos> listarProdutos() {
+    public void listarProdutos() {
         for (Produtos p : listaDosProdutos) {
             System.out.println(p);
         }
-
-
-        return new ArrayList<>();
-
     }
 
     public List<Produtos> buscarProdutos() {
 
-        return new ArrayList<>();
+        System.out.println("Buscando Produtos ");
+        System.out.println("Digite o ID do produto: ");
+        int idProduto = input.nextInt();
+
+        return listaDosProdutos.stream()
+                .filter(p -> p.getIdProduto() == idProduto)
+                .toList();
 
     }
 
+
     public List<Produtos> filtrarProdutosOrdemAlfabetica() {
 
-        return new ArrayList<>();
+
     }
 
     public List<Produtos> FiltrarProdutosQuantidade() {
 
-        return new ArrayList<>();
     }
 
 }

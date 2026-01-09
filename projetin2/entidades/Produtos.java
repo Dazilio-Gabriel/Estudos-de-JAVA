@@ -2,7 +2,7 @@ package projetin2.entidades;
 
 public class Produtos {
 
-    private Integer idProduto = 0;
+    private int idProduto = 0;
     private String nome;
     private String descricao;
     private Integer quantidade;
