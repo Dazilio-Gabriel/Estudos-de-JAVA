@@ -28,14 +28,13 @@ public class ProdutosService {
 
     }
 
-    public void deletarProdutos(Produtos produtos) {
+    public void deletarProdutos() {
 
         System.out.println("Removendo um produto:");
         System.out.println("Digite o ID do produto: ");
         int idProduto = input.nextInt();
 
-        listaDosProdutos.removeIf(p -> p
-                .getIdProduto() == idProduto);
+        listaDosProdutos.removeIf(p -> p.getIdProduto() == idProduto);
 
     }
 
@@ -62,7 +61,7 @@ public class ProdutosService {
                 p.setDescricao(descricao);
                 p.setQuantidade(quantidade);
                 p.setPreco(preco);
-                
+
                 return;
 
             }
@@ -81,9 +80,7 @@ public class ProdutosService {
         System.out.println("Digite o ID do produto: ");
         int idProduto = input.nextInt();
 
-        return listaDosProdutos.stream()
-                .filter(p -> p.getIdProduto() == idProduto)
-                .toList();
+        return listaDosProdutos.stream().filter(p -> p.getIdProduto() == idProduto).toList();
 
     }
 
@@ -91,10 +88,20 @@ public class ProdutosService {
     public List<Produtos> filtrarProdutosOrdemAlfabetica() {
 
 
+
+
+        return filtrarProdutosOrdemAlfabetica();
     }
 
     public List<Produtos> FiltrarProdutosQuantidade() {
 
-    }
+        System.out.println("Filtrando Produtos por quantidade");
+        System.out.println("Digite o ID do produto: ");
+        int quantidadeUsuario = input.nextInt();
 
+        return listaDosProdutos.stream()
+                .filter(p -> p.getQuantidade() >= quantidadeUsuario)
+                .toList();
+
+    }
 }
