@@ -3,6 +3,7 @@ package projetin2.services;
 import projetin2.entidades.Produtos;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -80,16 +81,17 @@ public class ProdutosService {
         System.out.println("Digite o ID do produto: ");
         int idProduto = input.nextInt();
 
-        return listaDosProdutos.stream().filter(p -> p.getIdProduto() == idProduto).toList();
+        return listaDosProdutos.stream()
+                .filter(p -> p.getIdProduto() == idProduto).toList();
 
     }
 
 
     public List<Produtos> filtrarProdutosOrdemAlfabetica() {
+        return listaDosProdutos.stream()
+                .sorted(Comparator.comparing(Produtos::getNome))
+                .toList();
 
-
-
-        return filtrarProdutosOrdemAlfabetica();
     }
 
     public List<Produtos> FiltrarProdutosQuantidade() {
